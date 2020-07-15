@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  code-agro-frontend:
-    image: code-agro-frontend
+  projeto-prefeitura-frontend:
+    image: projeto-prefeitura
     build: .
     ports:
       - 4200:80
