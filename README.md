@@ -1,19 +1,9 @@
 
-#Tutorial de configuração do backend json-server:
+#Tutorial start usando docker:
 
-1. Crie uma pasta para o backend.
-2. Caminhe até o diretório da pasta.
-3. Execute o comando 'npm init -y'.
-4. Execute o comando 'npm i json-server'.
-5. Crie um novo arquivo chamado 'db.json' e insira os atributos conforme o exemplo abaixo:
+1. Executar o comando 'docker-compose up' na raiz do projeto;
 
-    {
-        "culturas": []
+#Tutorial start sem docker:
 
-    }
-
-6. Agora, abra o arquivo 'package.json'. Substitua o script default 'test' por:
-     
-     "start": "json-server --watch db.json --port 3001" 
-
-7. Para startar o servidor, execute o comando 'npm start'.
+1. Executar o comando 'npm install' na raiz do projeto;
+1. Executar o comando 'ng serve' na raiz do projeto;
