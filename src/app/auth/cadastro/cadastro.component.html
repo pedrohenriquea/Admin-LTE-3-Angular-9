@@ -1,0 +1,56 @@
+<body class="hold-transition login-page" style="background-image: url('../../assets/login-bg.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="https://www.codeonesistemas.com" style="color: #fff"><b>Projeto</b>Prefeitura</a>
+      </div>
+     
+      <div class="card">
+        <div class="card-body login-card-body">
+          <p class="login-box-msg">Preencha o formulário para continuar o cadastro</p>
+    
+          <form>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="nome" [(ngModel)]="usuarioCadastro.nome" placeholder="Nome">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fa fa-circle"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Usuário" name="login" [(ngModel)]="usuarioCadastro.login">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fa fa-user-circle"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Senha" name="senha" [(ngModel)]="usuarioCadastro.senha">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <button type="submit" class="btn btn-light btn-block" (click)="cancelar()">Cancelar</button>
+              </div>
+              
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary btn-block" (click)="cadastrar()">Cadastrar</button>
+              </div>
+              
+            </div>
+          </form>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    
+    
+    </body>
