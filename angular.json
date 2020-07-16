@@ -148,6 +148,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "projeto-prefeitura"
+    }
+  },
+  "defaultProject": "projeto-prefeitura",
+  "cli": {
+    "analytics": false
+  }
 }
