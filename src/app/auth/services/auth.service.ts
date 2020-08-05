@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(usuario: UsuarioRequest): boolean{
-    return usuario.login === 'admin' && usuario.senha === 'admin';
+    return true;
   } 
 
   logout(){
