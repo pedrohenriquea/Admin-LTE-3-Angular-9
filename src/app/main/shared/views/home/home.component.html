@@ -86,15 +86,50 @@
             <hr>
 
             <div class="row">
-              <div class="col-3">
-                <div class="form-group">
-                  <label>Número cartão</label>
-                  <input type="text" class="form-control" placeholder="Número cartão" name="descricaoDoLote"
-                    (keyup)="verificaBandeiraCartao($event)" required>
-                  <div class="bandeiraCartao"></div>
 
+              <div class="col-3">
+                <label>Número cartão</label>
+                <div class="input-group mb-1">
+
+                  <input type="text" class="form-control" placeholder="Número cartão" [(ngModel)]="numeroCartao" name="numeroCartao"
+                    (keyup)="verificaBandeiraCartao($event)" required>
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <div class="bandeiraCartao"></div>
+                    </span>
+                  </div>
                 </div>
               </div>
+
+
+
+              <div class="col-2" *ngIf="exibirQuantidadeParcelas">
+                <div class="form-group">
+                  <label>Dígito verificador</label>
+                  <input type="text" class="form-control" placeholder="Dígito Verificador" [(ngModel)]="cvv" name="cvv"
+                    required maxlength="3">
+                </div>
+              </div>
+
+              <div class="col-1" *ngIf="exibirQuantidadeParcelas">
+                <div class="form-group">
+                  <label>Mês expiração</label>
+                  <input type="text" class="form-control" placeholder="Mês" [(ngModel)]="mesExpiracao" name="mesExpiracao" required
+                    maxlength="2">
+                </div>
+              </div>
+
+              <div class="col-1" *ngIf="exibirQuantidadeParcelas">
+                <div class="form-group">
+                  <label>Ano expiração</label>
+                  <input type="text" class="form-control" [(ngModel)]="anoExpiracao" name="anoExpiracao" placeholder="Ano"  required
+                    maxlength="4" >
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
 
               <div class="col-3" *ngIf="exibirQuantidadeParcelas">
                 <div class="form-group">
@@ -102,13 +137,9 @@
                   <select name="qtdeParcelas" id="qtdParcelas" class="form-control">
                     <option value="">Selecione</option>
                   </select>
-
                 </div>
               </div>
 
-            </div>
-
-            <div class="row">
               <div class="col-3">
                 <div class="form-group">
                   <label>Nome Cartão</label>
@@ -117,25 +148,32 @@
                 </div>
               </div>
 
-              <div class="col-3">
+              <div class="col-2">
                 <div class="form-group">
                   <label>CPF</label>
                   <input type="text" class="form-control" placeholder="CPF" name="descricaoDoLote" required>
                 </div>
               </div>
 
-              <div class="col-3">
+              <div class="col-2">
                 <div class="form-group">
                   <label>Data de nascimento</label>
-                  <input type="text" class="form-control" placeholder="CPF" name="descricaoDoLote" required>
+                  <input type="text" class="form-control" placeholder="Nascimento" name="descricaoDoLote" required>
                 </div>
               </div>
+            </div>
+
+            <!-- Linha inputs hiddens -->
+            <div class="row">
+              <input id="bandeiraSelecionadaHidden" type="hidden" class="form-control" >
+              <input id="cardTokenHidden" type="hidden" class="form-control">
+              <input id="senderHashHidden" type="hidden" class="form-control">
             </div>
 
 
 
             <div class="mt-4">
-              <button class="btn btn-primary btn-lg btn-flat">
+              <button class="btn btn-primary btn-lg btn-flat" (click)="pagar()">
                 <i class="fas fa-cart-plus fa-lg mr-2"></i>
                 Pagar
               </button>
